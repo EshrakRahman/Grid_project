@@ -40,14 +40,53 @@
     height: 50px;
     width: 50px;
     display: none;
-
 }
-.navbar .bar {
+
+.navbar .hamburger:hover {
+    cursor: pointer;
+}
+.bar1, .bar2, .bar3 {
     background-color: black;
     height: 4px;
     width: 36px;
     margin: 3px;
     border-radius: 10px;
+}
+
+.mobileNav {
+    width: 80px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: -200px;
+    background-color: white;
+    padding: 16px;
+    transition: transform 0.7s;
+}
+
+.mobileNav a {
+    text-decoration: none;
+    color: black;
+    margin: 16px 0;
+}
+
+.mobileNav a:hover {
+    text-decoration: underline;
+}
+
+.mobileNav img {
+    width: 24px;
+    height: 24px;
+    /*margin: 40px 0;*/
+}
+
+.openNav {
+    transform: translateX(-200px);
 }
 .project {
     /*width: 300px;*/
@@ -196,5 +235,53 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+}
+.animationBar1 {
+    animation: flipBar1 1s ;
+    animation-fill-mode: forwards;
+}
+
+.animationBar2 {
+    animation: fadeBar2 1s ;
+    animation-fill-mode: forwards;
+
+}
+
+.animationBar3 {
+
+    animation: flipBar3 1s ;
+    animation-fill-mode: forwards;
+
+}
+@keyframes fadeBar2 {
+    from {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+
+@keyframes flipBar1 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(45deg) translate(4px, 10px);
+    }
+}
+
+@keyframes flipBar3 {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(-45deg) translate(4px, -10px);
     }
 }
